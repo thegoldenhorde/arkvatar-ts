@@ -1,4 +1,4 @@
-import { Arkvatar } from '../src/arkvatar';
+import {Arkvatar} from "../src";
 
 test('Arkvatar can verify a given address without multiple collisions', async () => {
     return Arkvatar.verify("0xab7c74abc0c4d48d1bdad5dcb26153fc8780f83e").then(data => expect(data).toMatchObject({"data": expect.anything()}));

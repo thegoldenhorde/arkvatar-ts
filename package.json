@@ -1,6 +1,6 @@
 {
   "name": "arkvatar-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typescript package for interacting with the Arkvatar API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "yarn run build",
-    "prepublishOnly": "yarn test && yarn run lint",
+    "prepublishOnly": "yarn run lint",
     "preversion": "yarn run lint",
     "version": "yarn run format && git add -A src",
     "postversion": "git push && git push --tags"

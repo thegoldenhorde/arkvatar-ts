@@ -18,8 +18,10 @@ yarn add arkvatar-ts
 ### Showing an existing Arkvatar
 
 ```typescript
+const arkvatar = require('arkvatar-ts');
+
 (async () => {
-    const response = await Arkvatar.show("validCryptoAddress");
+    const response = await arkvatar.show("validCryptoAddress");
     console.log(response);
 })();
 ```
@@ -28,7 +30,9 @@ yarn add arkvatar-ts
 
 ```typescript
 (async () => {
-    const response = await Arkvatar.verify("validCryptoAddress");
+    const arkvatar = require('arkvatar-ts');
+
+    const response = await arkvatar.verify("validCryptoAddress");
     console.log(response);
 })();
 ```
@@ -37,8 +41,10 @@ yarn add arkvatar-ts
 
 ```typescript
 (async () => {
+    const arkvatar = require('arkvatar-ts');
+
     // Crypto Type are the full name of a cryptocurrency, Ethereum or Ark for example.
-    const response = await Arkvatar.store("validCryptoAddress", "validCryptoType");
+    const response = await arkvatar.store("validCryptoAddress", "validCryptoType");
     console.log(response);
 })();
 ```

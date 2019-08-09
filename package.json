@@ -9,16 +9,13 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
+    "prepare": "yarn run build",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "preversion": "yarn run lint",
+    "version": "yarn run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thegoldenhorde/arkvatar-ts.git"
-  },
+  "repository": "git+https://github.com/thegoldenhorde/arkvatar-ts.git",
   "keywords": [
     "Wrapper",
     "API",
@@ -41,7 +38,6 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "got": "^9.6.0",
-    "nock": "^10.0.6"
+    "got": "^9.6.0"
   }
 }

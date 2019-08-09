@@ -38,6 +38,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@types/got": "^9.6.5",
     "got": "^9.6.0"
   }
 }

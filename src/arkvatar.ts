@@ -1,55 +1,49 @@
-const got = require('got');
+import got from "got";
 
 export class Arkvatar {
-    static async verify(data: String): Promise<void> {
+    public static async verify(data: string): Promise<void> {
         try {
-            let options = {
-                json: true,
+            const resp = await got.post('https://arkvatar.com/api/verify', {
+                body: {
+                    identifier: data
+                },
                 headers: {
                     'Content-type': 'application/json'
                 },
-                body: {
-                    identifier: data
-                }
-            };
-
-            const resp = await got.post('https://arkvatar.com/api/verify', options);
+                json: true
+            });
             return resp.body;
         } catch (error) {
             return error.response.body;
         }
     }
 
-    static async show(data: String): Promise<void> {
+    public static async show(data: string): Promise<void> {
         try {
-            let options = {
-                json: true,
+            const resp = await got(`https://arkvatar.com/api/${data}`, {
                 headers: {
                     'Content-type': 'application/json'
-                }
-            };
-
-            const resp = await got(`https://arkvatar.com/api/${data}`, options);
+                },
+                json: true
+            });
             return resp.body;
         } catch (error) {
             return error.response.body;
         }
     }
 
-    static async store(data: String, type: String): Promise<void> {
+    public static async store(data: string, identifierType: string): Promise<void> {
         try {
-            let options = {
-                json: true,
+            const resp = await got.post('https://arkvatar.com/api/store', {
+                body: {
+                    identifier: data,
+                    type: identifierType
+                },
                 headers: {
                     'Content-type': 'application/json'
                 },
-                body: {
-                    type: type,
-                    identifier: data
-                }
-            };
-
-            const resp = await got.post('https://arkvatar.com/api/store', options);
+                json: true
+            });
             return resp.body;
         } catch (error) {
             return error.response.body;

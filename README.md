@@ -10,7 +10,7 @@ API Wrapper to interact with Arkvatar.
 ## Installation
 
 ```bash
-yarn install arkvatar-ts
+yarn add arkvatar-ts
 ```
 
 ## Usage

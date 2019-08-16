@@ -1,6 +1,6 @@
 {
   "name": "arkvatar-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Typescript package for interacting with the Arkvatar API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "prepare": "yarn run build",
     "prepublishOnly": "yarn run lint",
     "preversion": "yarn run lint",
-    "version": "yarn run format && gitadd -A src",
+    "version": "yarn run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
   "repository": "git+https://github.com/thegoldenhorde/arkvatar-ts.git",

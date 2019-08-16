@@ -10,7 +10,7 @@ API Wrapper to interact with Arkvatar.
 ## Built with
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [GOT](https://github.com/sindresorhus/got)
+- [Axios](https://github.com/axios/axios)
 
 ## Installation
 

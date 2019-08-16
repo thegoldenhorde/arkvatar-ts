@@ -1,50 +1,42 @@
-import got from 'got';
+import axios from 'axios'
 
-export async function verify(data: string): Promise<void> {
+export async function verify(data: string): Promise<any> {
   try {
-    const resp = await got.post('https://arkvatar.com/api/verify', {
-      body: {
+    return await axios.post('https://arkvatar.com/api/verify',{
         identifier: data,
-      },
+    }, {
       headers: {
-        'Content-type': 'application/json',
-      },
-      json: true,
+        'Content-Type': 'application/json',
+      }
     });
-    return resp.body;
   } catch (error) {
-    return error.response.body;
+    return error;
   }
 }
 
-export async function show(data: string): Promise<void> {
+export async function show(data: string): Promise<any> {
   try {
-    const resp = await got(`https://arkvatar.com/api/${data}`, {
+    return await axios.get(`https://arkvatar.com/api/${data}`, {
       headers: {
-        'Content-type': 'application/json',
-      },
-      json: true,
+        'Content-Type': 'application/json',
+      }
     });
-    return resp.body;
   } catch (error) {
-    return error.response.body;
+    return error;
   }
 }
 
-export async function store(data: string, identifierType: string): Promise<void> {
+export async function store(data: string, identifierType: string): Promise<any> {
   try {
-    const resp = await got.post('https://arkvatar.com/api/store', {
-      body: {
-        identifier: data,
-        type: identifierType,
-      },
+    return await axios.post('https://arkvatar.com/api/store', {
+      identifier: data,
+      type: identifierType,
+    }, {
       headers: {
-        'Content-type': 'application/json',
-      },
-      json: true,
+        'Content-Type': 'application/json',
+      }
     });
-    return resp.body;
   } catch (error) {
-    return error.response.body;
+    return error;
   }
 }
